@@ -5,11 +5,11 @@ import com.github.javafaker.Faker;
 public class RandomDataUtility {
 	Faker faker=new Faker();
 	
-public String radomUsername()
+public String randomUsername()
 {
 	return faker.name().username();
 }
-public String radomPassword()
+public String randomPassword()
 {
 	return faker.internet().password();
 }

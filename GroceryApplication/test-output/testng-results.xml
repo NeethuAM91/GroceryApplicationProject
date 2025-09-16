@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-15T11:40:25 IST" name="Default suite" finished-at="2025-09-15T11:40:32 IST" duration-ms="7172">
+  <suite started-at="2025-09-16T14:53:56 IST" name="Default suite" finished-at="2025-09-16T14:54:04 IST" duration-ms="8250">
     <groups>
     </groups>
-    <test started-at="2025-09-15T11:40:25 IST" name="Default test" finished-at="2025-09-15T11:40:32 IST" duration-ms="7172">
+    <test started-at="2025-09-16T14:53:56 IST" name="Default test" finished-at="2025-09-16T14:54:04 IST" duration-ms="8250">
       <class name="testscripts.AdminTest">
-        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testscripts.AdminTest@47eaca72]" started-at="2025-09-15T11:40:25 IST" name="initializeBrowser" finished-at="2025-09-15T11:40:30 IST" duration-ms="4485" status="PASS">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testscripts.AdminTest@73a1e9a9]" started-at="2025-09-16T14:53:56 IST" name="initializeBrowser" finished-at="2025-09-16T14:54:00 IST" duration-ms="4370" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyNewWUserInAdminPage()[pri:0, instance:testscripts.AdminTest@47eaca72]" started-at="2025-09-15T11:40:30 IST" name="verifyNewWUserInAdminPage" finished-at="2025-09-15T11:40:32 IST" duration-ms="2627" status="PASS">
+        <test-method signature="verifyNewWUserInAdminPage()[pri:0, instance:testscripts.AdminTest@73a1e9a9]" started-at="2025-09-16T14:54:00 IST" name="verifyNewWUserInAdminPage" finished-at="2025-09-16T14:54:04 IST" duration-ms="3790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewWUserInAdminPage -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.AdminTest@47eaca72]" started-at="2025-09-15T11:40:32 IST" name="driverQuit" finished-at="2025-09-15T11:40:32 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.AdminTest@73a1e9a9]" started-at="2025-09-16T14:54:04 IST" name="driverQuit" finished-at="2025-09-16T14:54:04 IST" duration-ms="20" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyNewWUserInAdminPage status=SUCCESS method=AdminTest.verifyNewWUserInAdminPage()[pri:0, instance:testscripts.AdminTest@47eaca72] output={null}]]]>
+                <![CDATA[[TestResult name=verifyNewWUserInAdminPage status=SUCCESS method=AdminTest.verifyNewWUserInAdminPage()[pri:0, instance:testscripts.AdminTest@73a1e9a9] output={null}]]]>
               </value>
             </param>
           </params>

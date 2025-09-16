@@ -35,13 +35,13 @@ public void newUserButtonClick()
 {
 	newUserButton.click();
 }
-public void enterusername()
+public void enterusername(String newusername)
 {
-	usernameField.sendKeys("prayan");
+	usernameField.sendKeys(newusername);
 }
-public void verifyenterpassword()
+public void enterpassword(String newpassword)
 {
-	passwordField.sendKeys("123");
+	passwordField.sendKeys(newpassword);
 }
 public void selectUserType()
 {

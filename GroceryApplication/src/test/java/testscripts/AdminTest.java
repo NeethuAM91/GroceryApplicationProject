@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 
 import automationcore.Base;
 import pages.AdminPage;
-import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.RandomDataUtility;
 
 public class AdminTest extends Base{
 	
@@ -18,15 +18,21 @@ public class AdminTest extends Base{
 		
 			String usernameValue=ExcelUtility.getStringData(0, 0, "LoginPage");
 			String passwordValue=ExcelUtility.getStringData(0, 1, "LoginPage");
+			
 			LoginPage login= new LoginPage(driver);
 			login.enterUsernameonUsernameField(usernameValue);
 			login.enterPasswordonPasswordField(passwordValue);
 			login.clickOnLoginButton();
+			
 			AdminPage admin=new AdminPage(driver);
+			RandomDataUtility randomdata=new RandomDataUtility();
+			String newusername=randomdata.randomUsername();
+			String newpassword=randomdata.randomPassword();
+			
 			admin.adminUserTileClick();
 			admin.newUserButtonClick();
-			admin.enterusername();
-			admin.verifyenterpassword();
+			admin.enterusername(newusername);
+			admin.enterpassword(newpassword);
 			admin.selectUserType();
 			admin.clickSaveButton();
 	}
