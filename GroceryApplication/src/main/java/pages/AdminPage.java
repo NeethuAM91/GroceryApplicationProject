@@ -16,7 +16,7 @@ public AdminPage( WebDriver driver)
 	PageFactory.initElements( driver,this);
 }
 	
-@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-admin']")private WebElement adminUserMoreinfoTile;
+//@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-admin']")private WebElement adminUserMoreinfoTile;
 @FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")private WebElement newUserButton;
 @FindBy(xpath="//input[@id='username']")private WebElement usernameField;
 @FindBy(xpath="//input[@id='password']")private WebElement passwordField;
@@ -27,10 +27,10 @@ public AdminPage( WebDriver driver)
 @FindBy(xpath="//select[@id='ut']")private WebElement usertypeInSearch;
 @FindBy(xpath="//i[@class='fa fa-search']")private WebElement searchInSearchfield;
 @FindBy(xpath="//i[@class='ace-icon fa fa-sync-alt']")private WebElement resetInAdminPage;
-public void adminUserTileClick()
+/*public void adminUserTileClick()
 {
 	adminUserMoreinfoTile.click();
-}
+}*/
 public void newUserButtonClick()
 {
 	newUserButton.click();
@@ -70,8 +70,22 @@ public void searchInSearchField()
 {
 	searchInSearchfield.click();
 }
-public void ResetInAdminPage()
+public void resetInAdminPage()
 {
 	resetInAdminPage.click();
+}
+@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")private WebElement alertmessage;
+public boolean isAlertMessageFound()
+{
+	return alertmessage.isDisplayed();
+}
+@FindBy(xpath="//td[text()='Neethu']")private WebElement searchusers;
+public boolean searchUserInAdminPage() {
+	return searchusers.isDisplayed();
+}
+@FindBy(xpath="//section[@class='content']")private WebElement resettablefound;
+public boolean isResetTableFound()
+{
+	return resettablefound.isDisplayed();
 }
 }

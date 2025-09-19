@@ -15,26 +15,7 @@ public WebDriver driver;
     PageFactory.initElements(driver, this);//for initializing the driver
     }
 	
-	@FindBy(xpath="//input[@placeholder=\"Username\"]")private WebElement username;
 	
-	public void enterUsernameonUsernameField(String usernameValue)
-	{
-		username.sendKeys(usernameValue);
-	}
-	
-	@FindBy(xpath="//input[@placeholder=\"Password\"]")private WebElement password;
-	
-	public void enterPasswordonPasswordField(String passwordvalue)
-	{
-		password.sendKeys(passwordvalue);
-	}
-	
-	@FindBy(xpath="//button[@type=\"submit\"]")private WebElement login;
-	
-	public void clickOnLoginButton()
-	{
-		login.click();
-	}
 	@FindBy(xpath="//a[@class='nav-link' and @data-toggle='dropdown']")private WebElement admin;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")private WebElement logout;
 	public void clickAdmin()
@@ -45,4 +26,20 @@ public WebDriver driver;
 	{
 		logout.click();
 	}
+	@FindBy(xpath="//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-admin']")private WebElement adminUserMoreinfoTile;
+	public void adminUserTileClick()
+	{
+		adminUserMoreinfoTile.click();
+	}
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class=\"active nav-link\"]")private WebElement managenewstile;
+	public void manageNewsTileClick()
+	{
+		managenewstile.click();
+	}
+	@FindBy(xpath="//b[text()='7rmart supermarket']")private WebElement textinloginpage;
+	public String isLoginTextDisplayed()
+	{
+		return textinloginpage.getText();
+	}
+	
 }

@@ -41,4 +41,31 @@ public WebDriver driver;
 	{
 		login.click();
 	}
+	@FindBy(xpath="//p[text()='Dashboard']")private WebElement dashboard;
+	
+	public  boolean isDashboardDisplayed()
+	{
+		
+			return dashboard.isDisplayed();
+		
 }
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/login']")private WebElement loginpagetitle;
+	
+	public String getPageTitle()
+	{
+		return loginpagetitle.getText();
+	}
+	@FindBy(xpath="//div[@class='icheck-dark']")private WebElement rememberme;
+	
+	public boolean isRemembermeDisplayed() {
+		return rememberme.isDisplayed();
+		
+	}
+	@FindBy(xpath="//button[@class='btn btn-dark btn-block']")private WebElement signinbutton;
+
+	public String isSigninButtonPresent()
+	{
+		return signinbutton.getText();
+	}
+	}
+
