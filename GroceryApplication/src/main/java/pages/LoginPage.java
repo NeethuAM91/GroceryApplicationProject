@@ -15,10 +15,6 @@ public WebDriver driver;
     this.driver=driver;
     PageFactory.initElements(driver, this);//for initializing the driver
     }
-	//@FindBy(id="user-name")private WebElement username;
-	//@FindBy(id="password")private WebElement password;
-	//@FindBy(id="login-button")private WebElement login;
-	
 	
 	
 	@FindBy(xpath="//input[@placeholder=\"Username\"]")private WebElement username;

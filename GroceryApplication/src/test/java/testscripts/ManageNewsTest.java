@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constant.Constants;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsPage;
@@ -16,8 +17,8 @@ public class ManageNewsTest extends Base{
 	@Test
 	public void verifyManageNewsPageWithnewNews() throws IOException
 	{
-		String usernameValue=ExcelUtility.getStringData(0, 0, "LoginPage");
-		String passwordValue=ExcelUtility.getStringData(0, 1, "LoginPage");
+		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
+		String passwordValue=ExcelUtility.getStringData(0, 1,Constants.LOGINSHEET );
 		LoginPage login=new LoginPage(driver);
 		login.enterUsernameonUsernameField(usernameValue);
 		login.enterPasswordonPasswordField(passwordValue);
@@ -35,8 +36,8 @@ public class ManageNewsTest extends Base{
 	@Test
 	public void verifySearchInManageNewsPage() throws IOException
 	{
-		String usernameValue=ExcelUtility.getStringData(0, 0, "LoginPage");
-		String passwordValue=ExcelUtility.getStringData(0, 1, "LoginPage");
+		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
+		String passwordValue=ExcelUtility.getStringData(0, 1,Constants.LOGINSHEET);
 		LoginPage login=new LoginPage(driver);
 		login.enterUsernameonUsernameField(usernameValue);
 		login.enterPasswordonPasswordField(passwordValue);
@@ -55,8 +56,8 @@ public class ManageNewsTest extends Base{
 	@Test
 	public void verifyResetInManageNewsPage() throws IOException
 	{
-		String usernameValue=ExcelUtility.getStringData(0, 0, "LoginPage");
-		String passwordValue=ExcelUtility.getStringData(0, 1, "LoginPage");
+		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
+		String passwordValue=ExcelUtility.getStringData(0, 1,Constants.LOGINSHEET);
 		LoginPage login=new LoginPage(driver);
 		login.enterUsernameonUsernameField(usernameValue);
 		login.enterPasswordonPasswordField(passwordValue);

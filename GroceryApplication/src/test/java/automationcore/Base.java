@@ -12,13 +12,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ScreenshotUtility;
 
 public class Base {
 	public WebDriver driver;
 	
 	@Parameters("browsers")
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	public void initializeBrowser(String browsers) throws Exception
 	{
 		if(browsers.equalsIgnoreCase("Chrome"))
@@ -29,11 +30,11 @@ public class Base {
 		{
 			driver =new FirefoxDriver();
 		}
-		/*else if(browsers.equalsIgnoreCase("Edge"))
+		else if(browsers.equalsIgnoreCase("Edge"))
 		{
-			WebDriverManager.edgeDriver().clearResolutionCache().forceDownload().setup();
+			WebDriverManager.edgedriver().clearResolutionCache().forceDownload().setup();
 			driver =new EdgeDriver();
-		}*/
+		}
 		else
 		{
 			throw new Exception("Invalid browser");
@@ -42,7 +43,7 @@ public class Base {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//Duration is a class-here wait for 5sec
 	}
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 
 		if (iTestResult.getStatus() == ITestResult.FAILURE) {

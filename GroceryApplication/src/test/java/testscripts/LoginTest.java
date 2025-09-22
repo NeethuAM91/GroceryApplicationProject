@@ -13,7 +13,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
-	@Test
+	@Test(groups= {"smoke"})
 	 public void verifyUserLoginWithValidCredentials() throws IOException
 	 {
 		
@@ -54,7 +54,7 @@ public class LoginTest extends Base {
 	 
 		 
 		}
-		@Test
+		@Test(groups= {"smoke"})
 		public void verifyUserLoginWithInvalidCredentials() throws IOException
 		 {
 			String usernameValue=ExcelUtility.getStringData(3, 0,Constants.LOGINSHEET);
