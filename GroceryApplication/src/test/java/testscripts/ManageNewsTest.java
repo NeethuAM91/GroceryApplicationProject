@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
 
-	@Test
+	@Test(priority=0,description="User is able to add news in Manage news page")
 	public void verifyManageNewsPageWithnewNews() throws IOException
 	{
 		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
@@ -33,7 +33,7 @@ public class ManageNewsTest extends Base{
 		String expected="Enter News Informations";
 		Assert.assertEquals(actual,expected,"User not in manage news page");
 	}
-	@Test
+	@Test(priority=1,description="User is able to search news in Manage news page")
 	public void verifySearchInManageNewsPage() throws IOException
 	{
 		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
@@ -53,7 +53,7 @@ public class ManageNewsTest extends Base{
 		Assert.assertEquals(actual,expected,"User not in manage news page");
 		
 	}
-	@Test
+	@Test(priority=2,description="User is able to reset in Manage news page")
 	public void verifyResetInManageNewsPage() throws IOException
 	{
 		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);

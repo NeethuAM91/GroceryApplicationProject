@@ -57,7 +57,7 @@ public void searchButtonInAdminPage()
 {
 	searchbutton.click();
 }
-public void enterUsernmaeInSearchField()
+/*public void enterUsernmaeInSearchField()
 {
 	usernameInSearch.sendKeys("neethu");
 }
@@ -65,7 +65,7 @@ public void enterUserTypeInSearchField()
 {
 	Select select=new Select(usertypeInSearch);
 	select.selectByVisibleText("Admin");
-}
+}*/
 public void searchInSearchField()
 {
 	searchInSearchfield.click();
@@ -88,4 +88,13 @@ public boolean isResetTableFound()
 {
 	return resettablefound.isDisplayed();
 }
+@FindBy(xpath="//input[@id='un']")private WebElement userSearchInAdmin;
+public void searchUsernameInAdmin(String user) {
+	userSearchInAdmin.sendKeys(user);
+}
+@FindBy(xpath="//select[@id='ut']")private WebElement searchtype;
+public void searchInAdminPage(String type) {
+	searchtype.sendKeys(type);
+}
+
 }

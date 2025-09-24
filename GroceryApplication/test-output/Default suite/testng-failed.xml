@@ -5,8 +5,8 @@
     <classes>
       <class name="testscripts.AdminTest">
         <methods>
+          <include name="verifySearchInAdminPage"/>
           <include name="initializeBrowser"/>
-          <include name="verifyNewWUserInAdminPage"/>
           <include name="driverQuit"/>
         </methods>
       </class> <!-- testscripts.AdminTest -->

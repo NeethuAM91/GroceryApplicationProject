@@ -12,7 +12,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
-	@Test
+	@Test(description="User is able to logout from home page")
 	 public void verifyLogoutFromHomePage() throws IOException
 	 {
 		
