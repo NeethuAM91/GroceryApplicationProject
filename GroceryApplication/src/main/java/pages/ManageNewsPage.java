@@ -14,35 +14,46 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 @FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")private WebElement newInmanageNews;
-public void newInManageNewsClick()
+public ManageNewsPage newInManageNewsClick()
 {
 	newInmanageNews.click();
+	return this;
 }
 @FindBy(xpath="//textarea[@id='news']")private WebElement textarea;
-public void textAreaNews()
+public ManageNewsPage textAreaNews(String value)
 {
-	textarea.sendKeys("This is a news from selenium");
+	textarea.sendKeys(value);
+	return this;
+
 }
 @FindBy(xpath="//button[@name='create']")private WebElement saveInmanageNews;
 
-public void saveButtonClickInManageNews()
+public ManageNewsPage saveButtonClickInManageNews()
 {
 	saveInmanageNews.click();
+	return this;
+
 }
 @FindBy(xpath="//a[@href='javascript:void(0)']")private WebElement searchInmanageNews;
-public void searchInManageNewsClick()
+public ManageNewsPage searchInManageNewsClick()
 {
 	searchInmanageNews.click();
+	return this;
+
 }
 @FindBy(xpath="//input[@name='un']")private WebElement searchNews;
-public void searchInManageNewsTextField()
+public ManageNewsPage searchInManageNewsTextField(String value)
 {
-	searchNews.sendKeys("This is a news from selenium");
+	searchNews.sendKeys(value);
+	return this;
+
 }
 @FindBy(xpath="//button[@class='btn btn-danger btn-fix']")private WebElement searchnewsbutton;
-public void searchNewsinTextField()
+public ManageNewsPage searchNewsinTextField()
 {
 	searchnewsbutton.click();
+	return this;
+
 }
 @FindBy(xpath="//i[@class='ace-icon fa fa-sync-alt']")private WebElement resetbuttoninmanagenews;
 public void resetNewsinManageNews()

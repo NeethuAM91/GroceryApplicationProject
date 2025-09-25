@@ -19,23 +19,26 @@ public WebDriver driver;
 	
 	@FindBy(xpath="//input[@placeholder=\"Username\"]")private WebElement username;
 	
-	public void enterUsernameonUsernameField(String usernameValue)
+	public LoginPage enterUsernameonUsernameField(String usernameValue)
 	{
 		username.sendKeys(usernameValue);
+		return this;
 	}
 	
 	@FindBy(xpath="//input[@placeholder=\"Password\"]")private WebElement password;
 	
-	public void enterPasswordonPasswordField(String passwordvalue)
+	public LoginPage enterPasswordonPasswordField(String passwordvalue)
 	{
 		password.sendKeys(passwordvalue);
+		return this;
 	}
 	
 	@FindBy(xpath="//button[@type=\"submit\"]")private WebElement login;
 	
-	public void clickOnLoginButton()
+	public HomePage clickOnLoginButton()
 	{
 		login.click();
+		return new HomePage(driver);
 	}
 	@FindBy(xpath="//p[text()='Dashboard']")private WebElement dashboard;
 	

@@ -11,12 +11,14 @@ import pages.AdminPage;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
-import utilities.ExcelUtilityforAdmin;
+
 import utilities.RandomDataUtility;
 
 public class AdminTest extends Base{
+	HomePage homepage;
+	AdminPage admin;
 	
-	@Test(priority=1,description="User ia able to add new user in admin page")
+	@Test(priority=1,description="User is able to add new user in admin page")
 	 public void verifyNewWUserInAdminPage() throws IOException
 	 {
 		
@@ -24,66 +26,44 @@ public class AdminTest extends Base{
 			String passwordValue=ExcelUtility.getStringData(0, 1,Constants.LOGINSHEET);
 			
 			LoginPage login= new LoginPage(driver);
-			login.enterUsernameonUsernameField(usernameValue);
-			login.enterPasswordonPasswordField(passwordValue);
-			login.clickOnLoginButton();
-			
-			AdminPage admin=new AdminPage(driver);
+			login.enterUsernameonUsernameField(usernameValue).enterPasswordonPasswordField(passwordValue);
+			homepage=login.clickOnLoginButton();
+			admin=homepage.adminUserTileClick();
 			RandomDataUtility randomdata=new RandomDataUtility();
 			String newusername=randomdata.randomUsername();
 			String newpassword=randomdata.randomPassword();
-			
-			HomePage homepage=new HomePage(driver);
-			homepage.adminUserTileClick();
-			admin.newUserButtonClick();
-			admin.enterusername(newusername);
-			admin.enterpassword(newpassword);
-			admin.selectUserType();
-			admin.clickSaveButton();
+		    admin.newUserButtonClick().enterusername(newusername).enterpassword(newpassword).selectUserType().clickSaveButton();
 			boolean alertmessage=admin.isAlertMessageFound();
-			Assert.assertTrue(alertmessage,"User is unable to create a new user");
+			Assert.assertTrue(alertmessage,Constants.USERCREATIONFAILURE);
 	}
-	@Test(priority=-1,description="User ia able to add new user in admin page")
+	@Test(priority=-1,description="User is able to search existing user in admin page")
 	public void verifySearchInAdminPage() throws IOException
 	{
 		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
 		String passwordValue=ExcelUtility.getStringData(0, 1,Constants.LOGINSHEET);
 		LoginPage login= new LoginPage(driver);
-		login.enterUsernameonUsernameField(usernameValue);
-		login.enterPasswordonPasswordField(passwordValue);
-		login.clickOnLoginButton();
-	
-		AdminPage admin=new AdminPage(driver);
-		HomePage homepage=new HomePage(driver);
-		homepage.adminUserTileClick();
-		admin.newUserButtonClick();
-		admin.searchButtonInAdminPage();
-		//admin.enterUsernmaeInSearchField();
-		//admin.enterUserTypeInSearchField();
-		admin.searchInSearchField();
-	    String user=ExcelUtilityforAdmin.getStringData(0, 0,"AdminSheet");
-	    String type=ExcelUtilityforAdmin.getStringData(0, 1,"AdminSheet");
-	    admin.searchUsernameInAdmin(user);
-	    admin.searchInAdminPage(type);
-	    admin.searchUserInAdminPage();
+		login.enterUsernameonUsernameField(usernameValue).enterPasswordonPasswordField(passwordValue);
+		homepage=login.clickOnLoginButton();
+		admin=homepage.adminUserTileClick();
+		admin.newUserButtonClick().searchButtonInAdminPage().searchInSearchField();
+	    String user=ExcelUtility.getStringData(0, 0,"AdminPage");
+	    String type=ExcelUtility.getStringData(0, 1,"AdminPage");
+	    admin.searchUsernameInAdmin(user).searchInAdminPage(type).searchInSearchField();
 		boolean search=admin.searchUserInAdminPage();
-		Assert.assertTrue(search,"User is not in admin page");
+		Assert.assertTrue(search,Constants.NOTINADMINPAGE);
 	}
-	@Test(priority=0,description="User ia able to add new user in admin page")
+	@Test(priority=0,description="User is able to reset admin page")
 	public void verifyResetInAdminPage() throws IOException
 	{
 		String usernameValue=ExcelUtility.getStringData(0, 0,Constants.LOGINSHEET);
 		String passwordValue=ExcelUtility.getStringData(0, 1,Constants.LOGINSHEET);
 		LoginPage login= new LoginPage(driver);
-		login.enterUsernameonUsernameField(usernameValue);
-		login.enterPasswordonPasswordField(passwordValue);
-		login.clickOnLoginButton();
-		AdminPage admin=new AdminPage(driver);
-		HomePage homepage=new HomePage(driver);
-		homepage.adminUserTileClick();
+		login.enterUsernameonUsernameField(usernameValue).enterPasswordonPasswordField(passwordValue);
+		homepage=login.clickOnLoginButton();
+		admin=homepage.adminUserTileClick();
 		admin.resetInAdminPage();
 		boolean reset=admin.isResetTableFound();
-		Assert.assertTrue(reset, "User is not in admin page");
+		Assert.assertTrue(reset, Constants.NOTINADMINPAGE);
 		
 	}
 	

@@ -3,10 +3,13 @@ package utilities;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.commons.math3.analysis.function.Constant;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import constant.Constants;
 
 public class ExcelUtility {
 	static FileInputStream f;
@@ -15,7 +18,7 @@ public class ExcelUtility {
 	
 	public static String getStringData(int a,int b,String sheet) throws IOException
 	{
-		f=new FileInputStream("C:\\Users\\padma\\git\\GroceryApplication\\GroceryApplication\\src\\test\\resources\\testdata.xlsx");
+		f=new FileInputStream(Constants.EXCELPATH);
 		w=new XSSFWorkbook(f);
 		s=w.getSheet(sheet);
 		XSSFRow r=s.getRow(a);
@@ -24,7 +27,7 @@ public class ExcelUtility {
 	}
 	public static String getIntegerData(int a,int b,String sheet) throws IOException 
 	{
-		f=new FileInputStream("C:\\Users\\padma\\git\\GroceryApplication\\GroceryApplication\\src\\test\\resources\\testdata.xlsx");
+		f=new FileInputStream(Constants.EXCELPATH);
 		w=new XSSFWorkbook(f);
 		s=w.getSheet(sheet);
 		XSSFRow r=s.getRow(a);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Parallel Testing">
-  <test thread-count="5" name="ChromeTest">
+<suite name="Parallel Testing" parallel="methods">
+  <test thread-count="5" name="Test1">
   <parameter name="browsers" value="Chrome"></parameter>
     <classes>
       <class name="testscripts.LoginTest">
@@ -9,19 +9,12 @@
       </class>
     </classes>   
   </test> <!-- Test -->
-  <test thread-count="5" name="EdgeTest">
-  <parameter name="browsers" value="Edge"></parameter>
+  
+  <test thread-count="5" name="Test2">
+  <parameter name="browsers" value="Chrome"></parameter>
     <classes>
       <class name="testscripts.LoginTest">
-      <methods><include name="verifyUserLoginWithValidCredentials"></include></methods>
-      </class>
-    </classes>   
-  </test> <!-- Test -->
-  <test thread-count="5" name="FirefoxTest">
-  <parameter name="browsers" value="Firefox"></parameter>
-    <classes>
-      <class name="testscripts.LoginTest">
-      <methods><include name="verifyUserLoginWithValidCredentials"></include></methods>
+      <methods><include name="verifyUserLoginWithValidUsernameandInvalidPassword"></include></methods>
       </class>
     </classes>   
   </test> <!-- Test -->

@@ -7,8 +7,8 @@
 <parameter name="browsers" value="Chrome"></parameter>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testscripts.LoginTest">
-      <methods><include name="verifyUserLoginWithInvalidCredentials"></include></methods>
+      <class name="testscripts.ManageNewsTest">
+     <methods><include name="verifyManageNewsPageWithnewNews"></include></methods>
       </class>
     </classes>
     

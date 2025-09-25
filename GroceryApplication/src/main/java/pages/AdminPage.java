@@ -27,35 +27,39 @@ public AdminPage( WebDriver driver)
 @FindBy(xpath="//select[@id='ut']")private WebElement usertypeInSearch;
 @FindBy(xpath="//i[@class='fa fa-search']")private WebElement searchInSearchfield;
 @FindBy(xpath="//i[@class='ace-icon fa fa-sync-alt']")private WebElement resetInAdminPage;
-/*public void adminUserTileClick()
-{
-	adminUserMoreinfoTile.click();
-}*/
-public void newUserButtonClick()
+
+public AdminPage newUserButtonClick()
 {
 	newUserButton.click();
+	return this;
 }
-public void enterusername(String newusername)
+public AdminPage enterusername(String newusername)
 {
 	usernameField.sendKeys(newusername);
+	return this;
 }
-public void enterpassword(String newpassword)
+public AdminPage enterpassword(String newpassword)
 {
 	passwordField.sendKeys(newpassword);
+	return this;
+	
 }
-public void selectUserType()
+public AdminPage selectUserType()
 {
 	Select select=new Select(userTypeDropdown);
 	select.selectByVisibleText("Admin");
+	return this;
 	
 }
-public void clickSaveButton()
+public AdminPage clickSaveButton()
 {
 	saveButton.click();
+	return this;
 }
-public void searchButtonInAdminPage()
+public AdminPage searchButtonInAdminPage()
 {
 	searchbutton.click();
+	return this;
 }
 /*public void enterUsernmaeInSearchField()
 {
@@ -66,13 +70,15 @@ public void enterUserTypeInSearchField()
 	Select select=new Select(usertypeInSearch);
 	select.selectByVisibleText("Admin");
 }*/
-public void searchInSearchField()
+public AdminPage searchInSearchField()
 {
 	searchInSearchfield.click();
+	return this;
 }
-public void resetInAdminPage()
+public AdminPage resetInAdminPage()
 {
 	resetInAdminPage.click();
+	return this;
 }
 @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")private WebElement alertmessage;
 public boolean isAlertMessageFound()
@@ -89,12 +95,14 @@ public boolean isResetTableFound()
 	return resettablefound.isDisplayed();
 }
 @FindBy(xpath="//input[@id='un']")private WebElement userSearchInAdmin;
-public void searchUsernameInAdmin(String user) {
+public AdminPage searchUsernameInAdmin(String user) {
 	userSearchInAdmin.sendKeys(user);
+	return this;
 }
 @FindBy(xpath="//select[@id='ut']")private WebElement searchtype;
-public void searchInAdminPage(String type) {
+public AdminPage searchInAdminPage(String type) {
 	searchtype.sendKeys(type);
+	return this;
 }
 
 }
