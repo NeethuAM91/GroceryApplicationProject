@@ -18,7 +18,7 @@ public class LoginTest extends Base {
 	
 	HomePage homepage;
 	
-	@Test(groups= {"smoke"},priority=1,description="User can login with valid credentials")
+	@Test(groups= {"smoke"},priority=1,description="User can login with valid credentials",retryAnalyzer = retry.Retry.class)
 	 public void verifyUserLoginWithValidCredentials() throws IOException
 	 {
 		

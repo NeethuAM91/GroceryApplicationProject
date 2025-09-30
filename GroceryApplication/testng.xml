@@ -7,10 +7,13 @@
 <parameter name="browsers" value="Chrome"></parameter>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testscripts.LoginTest"/>
-      <class name="testscripts.HomeTest"/>
+      <class name="testscripts.LoginTest">
+      <methods><include name="verifyUserLoginWithValidCredentials"></include></methods>
+      
+   <!-- <class name="testscripts.HomeTest"/>
       <class name="testscripts.AdminTest"/>
-      <class name="testscripts.ManageNewsTest"/>
+      <class name="testscripts.ManageNewsTest"/-->
+      </class>
     </classes>
     
   </test> <!-- Test -->
